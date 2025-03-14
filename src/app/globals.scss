@@ -1,9 +1,12 @@
 :root {
+  // Colors
   --accent-vert: linear-gradient(to top, #ffc593, #bc7198, #5a77ff);
   --accent-hoz: linear-gradient(-95deg, #ffc593, #bc7198, #5a77ff);
   --gray: #dfdfdf;
 
-  --font-dm-sans: "DM Sans", sans-serif;
+  // Width
+  --width: 1440px;
+  --container: 1110px;
 }
 
 html,
