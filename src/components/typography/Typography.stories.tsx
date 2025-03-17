@@ -1,5 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import { expect, within } from "@storybook/test";
 import Typography from "./Typography";
 
 const meta = {
@@ -19,12 +20,23 @@ export const Heading1: Story = {
     variant: "h1",
     children: "Heading 1 (32px - 40px)",
   },
+  play: async ({ canvasElement }) => {
+    // Verify text content
+    const canvas = within(canvasElement);
+    const heading = canvas.getByText("Heading 1 (32px - 40px)");
+    await expect(heading.tagName.toLowerCase()).toBe("h1");
+  },
 };
 
 export const Heading2: Story = {
   args: {
     variant: "h2",
     children: "Heading 2 (24px)",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const heading = canvas.getByText("Heading 2 (24px)");
+    await expect(heading.tagName.toLowerCase()).toBe("h2");
   },
 };
 
@@ -33,6 +45,11 @@ export const Heading3: Story = {
     variant: "h3",
     children: "Heading 3 (18px)",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const heading = canvas.getByText("Heading 3 (18px)");
+    await expect(heading.tagName.toLowerCase()).toBe("h3");
+  },
 };
 
 export const Heading4: Story = {
@@ -40,12 +57,22 @@ export const Heading4: Story = {
     variant: "h4",
     children: "Heading 4 (15px)",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const heading = canvas.getByText("Heading 4 (15px)");
+    await expect(heading.tagName.toLowerCase()).toBe("h4");
+  },
 };
 
 export const Paragraph: Story = {
   args: {
     variant: "p",
     children: "Paragraph (12px) - Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nun.",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const paragraph = canvas.getByText(/^Paragraph \(12px\)/);
+    await expect(paragraph.tagName.toLowerCase()).toBe("p");
   },
 };
 
@@ -120,4 +147,9 @@ export const TypographyShowcase: ShowcaseStory = {
       </div>
     </div>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const headings = canvas.getAllByText(/^Heading \d/);
+    await expect(headings.length).toBeGreaterThan(0);
+  },
 };
