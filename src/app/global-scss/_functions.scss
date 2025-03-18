@@ -1,0 +1,22 @@
+@use "sass:math";
+
+// * Define a global base font size
+$base-font-size: 16px;
+
+// * Function to convert px values to rem values
+// * Usage: rem(20px);
+@function rem($pixels) {
+  @return math.div($pixels, $base-font-size) * 1rem;
+}
+
+// * Function to convert px values to em values
+// * Usage: em(4.17px, 20px);
+@function em($pixels, $context) {
+  @return math.div($pixels, $context) * 1em;
+}
+
+// * Function to convert line-height to unitless value
+// * Usage: lh(24px, 16px);
+@function lh($line-height, $font-size) {
+  @return math.div($line-height, $font-size);
+}

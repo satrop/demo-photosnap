@@ -1,0 +1,80 @@
+@use "./functions";
+
+:root {
+  // Fonts
+  --font-primary: var(--font-dm-sans);
+  --font-mono: var(--font-geist-mono);
+
+  // Sizes
+  --xxl: clamp(#{functions.rem(32px)}, 3vw, #{functions.rem(40px)}); // H1
+  --xl: #{functions.rem(24px)}; // H2
+  --lg: #{functions.rem(18px)}; // H3
+  --sm: #{functions.rem(12px)}; // H4
+  --md: #{functions.rem(15px)}; // Body
+
+  // Weights
+  --bold: 700;
+  --regular: 300;
+
+  // Line heights
+  --lh-xxl: #{functions.lh(48px, 40px)}; // H1
+  --lh-xl: #{functions.lh(25px, 24px)}; // H2
+  --lh-lg: #{functions.lh(25px, 18px)}; // H3
+  --lh-sm: #{functions.lh(16px, 12px)}; // H4
+  --lh-md: #{functions.lh(25px, 15px)}; // Body
+
+  // Letter spacing
+  --ls-xxl: #{functions.em(2.14px, 32px)}; // H1
+  --ls-md: #{functions.em(0.08px, 15px)}; // Body
+  --ls-sm: #{functions.em(2px, 12px)}; // H4
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  font-weight: var(--bold);
+}
+
+body {
+  font-size: var(--md);
+  font-weight: var(--regular);
+  line-height: var(--lh-md);
+  letter-spacing: var(--ls-md);
+}
+
+h1,
+.h1 {
+  font-size: var(--xxl);
+  line-height: var(--lh-xxl);
+  letter-spacing: var(--ls-xxl);
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-size: var(--xl);
+  line-height: var(--lh-xl);
+}
+
+h3,
+.h3 {
+  font-size: var(--lg);
+  line-height: var(--lh-lg);
+}
+
+h4,
+.h4 {
+  font-size: var(--sm);
+  line-height: var(--lh-sm);
+  letter-spacing: var(--ls-sm);
+  text-transform: uppercase;
+}
