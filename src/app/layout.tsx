@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
+import Navigation from "@/components/navigation/Navigation";
 import "./globals.scss";
 
 const dmSans = DM_Sans({
@@ -27,7 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${geistMono.variable}`}
     >
-      <body>{children}</body>
+      <body className="grid-container">
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }
