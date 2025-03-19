@@ -14,14 +14,6 @@ export default function Home() {
           {/* Gallery content */}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer-section">
-        <div>
-          {/* Footer content */}
-          <p>© 2024 Photosnap. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -65,32 +65,3 @@
     padding-inline: var(--pad-sm);
   }
 }
-
-// Common layout sections
-.nav {
-  grid-column: full-start / full-end;
-  width: 100%;
-
-  > * {
-    max-width: 1440px;
-    margin: 0 auto;
-
-    @media (min-width: 768px) {
-      padding-inline: var(--pad-md);
-    }
-
-    @media (min-width: 1024px) {
-      padding-inline: var(--pad-sm);
-    }
-  }
-}
-
-.footer-section {
-  grid-column: full-start / full-end;
-  width: 100%;
-
-  > * {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-}

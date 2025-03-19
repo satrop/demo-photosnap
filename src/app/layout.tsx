@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/navigation/Navigation";
 import "./globals.scss";
+import Footer from "@/components/footer/Footer";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="grid-container">
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
