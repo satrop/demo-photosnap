@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "../button/Button";
 import Link from "next/link";
-import styles from "./Navigation.module.scss";
 import Logo from "../logo/Logo";
+import "./Navigation.scss";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +30,11 @@ export default function Navigation() {
   };
 
   return (
-    <nav
-      className={`${styles.nav} main-width`}
-      key="main-navigation"
-    >
-      <div className={`${styles.navContainer}`}>
+    <nav className="nav main-width">
+      <div className="navContainer">
         <Link
           href="/"
-          className={styles.logoLink}
+          className="logoLink"
         >
           <Logo />
         </Link>
@@ -46,16 +43,16 @@ export default function Navigation() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
-          className={styles.hamburger + (isOpen ? ` ${styles.open}` : "")}
+          className={`hamburger${isOpen ? " open" : ""}`}
         >
           <span></span>
           <span></span>
         </button>
         <div
-          className={styles.menuContainer + (isOpen ? ` ${styles.open}` : "")}
+          className={`menuContainer${isOpen ? " open" : ""}`}
           inert={isMobile ? !isOpen : undefined}
         >
-          <ul className={styles.menu}>
+          <ul className="menu">
             <li>
               <Link href="/stories">Stories</Link>
             </li>
@@ -69,7 +66,7 @@ export default function Navigation() {
           <Button
             variant="primary"
             aria-label="Get an invite"
-            className={styles.inviteButton}
+            className="inviteButton"
           >
             Get an Invite
           </Button>

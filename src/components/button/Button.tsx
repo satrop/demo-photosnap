@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ComponentProps, MouseEvent } from "react";
-import styles from "./Button.module.scss";
 
 interface ButtonProps extends ComponentProps<"button"> {
   variant?: "primary" | "secondary";
@@ -10,12 +9,12 @@ interface ButtonProps extends ComponentProps<"button"> {
 }
 
 export const Button = ({ children, variant = "primary", href, onClick, className = "", "aria-label": ariaLabel, ...props }: ButtonProps) => {
-  const buttonClasses = `${styles.button} ${styles[`button--${variant}`]} ${className}`.trim();
+  const buttonClasses = `button button--${variant} ${className}`.trim();
 
   const renderContent = () => (
     <>
       {children}
-      {variant === "secondary" && <span className={styles.arrow} />}
+      {variant === "secondary" && <span />}
     </>
   );
 

@@ -1,22 +1,21 @@
 "use client";
-import styles from "./Footer.module.scss";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Button } from "../button/Button";
 import Logo from "../logo/Logo";
 import { FaFacebook, FaYoutube, FaTwitter, FaPinterest, FaInstagram } from "react-icons/fa";
-import { Button } from "../button/Button";
+import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <footer className={`${styles.footer} background--black main-width`}>
-      <div className={styles.container}>
-        <div className={styles.col}>
-          <div className={styles.logoSection}>
+    <footer className="footer background--black main-width">
+      <div className="container">
+        <div className="col">
+          <div className="logoSection">
             <Logo />
           </div>
 
           <nav
-            className={styles.socialLinks}
+            className="socialLinks"
             aria-label="Social media links"
           >
             <ul>
@@ -74,7 +73,7 @@ export default function Footer() {
           </nav>
 
           <nav
-            className={styles.pageLinks}
+            className="pageLinks"
             aria-label="Footer navigation"
           >
             <ul>
@@ -94,9 +93,9 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className={styles.col}>
+        <div className="col">
           <Button
-            className={styles.inviteButton}
+            className="inviteButton"
             variant="secondary"
             aria-label="Get an invite"
             title="Get an invite"
@@ -104,7 +103,7 @@ export default function Footer() {
             Get an invite
           </Button>
 
-          <div className={styles.copyright}>
+          <div className="copyright">
             <p>Copyright 2019. All Rights Reserved</p>
           </div>
         </div>

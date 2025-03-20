@@ -29,9 +29,9 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${geistMono.variable}`}
     >
-      <body className="grid-container">
+      <body>
         <Navigation />
-        {children}
+        <main className="grid-container">{children}</main>
         <Footer />
       </body>
     </html>

@@ -9,11 +9,10 @@
   justify-content: center;
   line-height: 1;
   letter-spacing: var(--ls-sm);
-  text-decoration-thickness: var(--underline-thickness);
   transition: color var(--anim), background-color var(--anim), outline var(--anim);
 
   span {
-    --color: #000;
+    --color: black;
 
     margin-left: 1em;
     display: inline-block;
@@ -37,8 +36,8 @@
 
   &--primary {
     padding: 0.7817rem 1.5rem;
-    background-color: #000;
-    color: #fff;
+    background-color: black;
+    color: white;
 
     &:hover {
       background-color: var(--gray);
@@ -53,18 +52,19 @@
 
   &--secondary {
     background-color: transparent;
-    color: #000;
+    color: black;
+
+    .background--black & {
+      background-color: black;
+      color: white;
+
+      span {
+        --color: white;
+      }
+    }
 
     &:hover {
       text-decoration: underline;
-    }
-
-    :global(.background--black) & {
-      color: #fff;
-
-      span {
-        --color: #fff;
-      }
     }
   }
 }

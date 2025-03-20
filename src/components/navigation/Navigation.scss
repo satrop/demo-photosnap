@@ -1,0 +1,108 @@
+@use "../../app/global-scss/layout";
+
+.nav {
+  padding: 1rem 0;
+  position: relative;
+  background: white;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logoLink {
+  padding: 1rem;
+  margin: -1rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 1rem;
+  margin: -1rem;
+  cursor: pointer;
+
+  @media (max-width: layout.$bp-md - 1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: black;
+      transition: transform 0.3s ease;
+    }
+
+    &.open {
+      span {
+        &:first-child {
+          transform: rotate(45deg) translate(3px, 3px);
+        }
+        &:last-child {
+          transform: rotate(-45deg) translate(3px, -3px);
+        }
+      }
+    }
+  }
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: layout.$bp-md - 1) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    right: -1rem;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+
+    &.open {
+      display: flex;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: layout.$bp-md - 1) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+}
+
+.inviteButton {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}

@@ -1,4 +1,4 @@
-@use "../../app/global-scss/layout" as *;
+@use "../../app/global-scss/layout";
 
 .hero {
   display: grid;
@@ -10,7 +10,7 @@
   grid-template-columns: 1fr;
 
   // Tablet and up - side by side layout
-  @media (min-width: $bp-md) {
+  @media (min-width: layout.$bp-md) {
     grid-template-rows: 1fr;
 
     &.side-by-side {
@@ -30,7 +30,7 @@
     }
   }
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: layout.$bp-lg) {
     &.side-by-side {
       grid-template-columns: 1fr minmax(0, 610px);
 
@@ -42,7 +42,14 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: clamp(4.5rem, 10vw, 10rem) clamp(2rem, 9vw, 7rem);
+}
+
+.button--secondary {
+  justify-content: flex-start;
 }
 
 .imageContainer {
@@ -55,12 +62,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .eyebrow {
@@ -96,7 +97,6 @@
   opacity: 0.6;
 }
 
-// Variant: overlay
 .overlay {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
@@ -115,20 +115,3 @@
     z-index: 1;
   }
 }
-
-// Variant: side-by-side
-// .side-by-side {
-//   &.image-right {
-//     .imageContainer {
-//       @media (min-width: $bp-md) {
-//         grid-column: 2;
-//       }
-//     }
-
-//     .content {
-//       @media (min-width: $bp-md) {
-//         grid-column: 1;
-//       }
-//     }
-//   }
-// }
