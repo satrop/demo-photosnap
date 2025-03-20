@@ -42,6 +42,7 @@ h4,
   padding: 0;
   font-family: var(--font-primary);
   font-weight: var(--bold);
+  text-wrap: balance;
 }
 
 body {
@@ -77,4 +78,8 @@ h4,
   line-height: var(--lh-sm);
   letter-spacing: var(--ls-sm);
   text-transform: uppercase;
+}
+
+.background--black {
+  color: white;
 }

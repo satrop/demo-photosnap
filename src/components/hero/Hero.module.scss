@@ -1,0 +1,134 @@
+@use "../../app/global-scss/layout" as *;
+
+.hero {
+  display: grid;
+  width: 100%;
+  min-height: 650px;
+
+  // Mobile first - stacked layout
+  grid-template-rows: 375px 1fr;
+  grid-template-columns: 1fr;
+
+  // Tablet and up - side by side layout
+  @media (min-width: $bp-md) {
+    grid-template-rows: 1fr;
+
+    &.side-by-side {
+      grid-template-columns: 1fr minmax(0, 495px);
+
+      &:nth-child(2n) {
+        grid-template-columns: minmax(0, 495px) 1fr;
+
+        .imageContainer {
+          order: 2;
+        }
+
+        .content {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $bp-lg) {
+    &.side-by-side {
+      grid-template-columns: 1fr minmax(0, 610px);
+
+      &:nth-child(2n) {
+        grid-template-columns: minmax(0, 610px) 1fr;
+      }
+    }
+  }
+}
+
+.content {
+  padding: clamp(4.5rem, 10vw, 10rem) clamp(2rem, 9vw, 7rem);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.meta {
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.date {
+  margin-right: 8px;
+}
+
+.author {
+  &:before {
+    content: "•";
+    margin-right: 8px;
+  }
+}
+
+.excerpt {
+  margin-bottom: 48px;
+  opacity: 0.6;
+}
+
+// Variant: overlay
+.overlay {
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
+
+  .imageContainer {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .content {
+    grid-row: 1;
+    grid-column: 1;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 1;
+  }
+}
+
+// Variant: side-by-side
+// .side-by-side {
+//   &.image-right {
+//     .imageContainer {
+//       @media (min-width: $bp-md) {
+//         grid-column: 2;
+//       }
+//     }
+
+//     .content {
+//       @media (min-width: $bp-md) {
+//         grid-column: 1;
+//       }
+//     }
+//   }
+// }

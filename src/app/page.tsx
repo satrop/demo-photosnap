@@ -1,19 +1,37 @@
+import Hero from "@/components/hero/Hero";
+
 export default function Home() {
   return (
-    <div>
-      {/* Main-width Content Section Example */}
-      <section className="main-width">
-        <h2>Main Content</h2>
-        {/* Your main content */}
-      </section>
-
-      {/* Another Full-width Section */}
-      <section className="full-width">
-        <div className="content-wrapper">
-          <h2>Full width</h2>
-          {/* Gallery content */}
-        </div>
-      </section>
-    </div>
+    <>
+      <Hero
+        variant="side-by-side"
+        image="/home/desktop/create-and-share.jpg"
+        imageAlt="Create and share your photo stories."
+        title="Create and share your photo stories."
+        excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        buttonText="Get an invite"
+        buttonHref="/pricing"
+        backgroundColor="black"
+      />
+      <Hero
+        variant="side-by-side"
+        image="/home/desktop/create-and-share.jpg"
+        imageAlt="Create and share your photo stories."
+        title="Create and share your photo stories"
+        excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        buttonText="Get an invite"
+        buttonHref="/pricing"
+        backgroundColor="black"
+      />
+      <Hero
+        variant="overlay"
+        image="/home/desktop/create-and-share.jpg"
+        imageAlt="Create and share your photo stories"
+        title="Create and share your photo stories"
+        excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        buttonText="Get an invite"
+        buttonHref="/pricing"
+      />
+    </>
   );
 }

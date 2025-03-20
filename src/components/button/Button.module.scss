@@ -55,20 +55,16 @@
     background-color: transparent;
     color: #000;
 
-    :global(.color--black) & {
-      color: #fff;
-
-      .arrow {
-        background-color: #fff;
-
-        &::before {
-          border-color: #fff;
-        }
-      }
-    }
-
     &:hover {
       text-decoration: underline;
+    }
+
+    :global(.background--black) & {
+      color: #fff;
+
+      span {
+        --color: #fff;
+      }
     }
   }
 }

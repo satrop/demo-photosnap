@@ -1,10 +1,4 @@
 :root {
-  // Define breakpoints for responsive design
-  --bp-sm: 480px;
-  --bp-md: 768px;
-  --bp-lg: 1024px;
-  --bp-xl: 1280px;
-
   // Define padding variables for consistent spacing
   --pad-sm: 1.25rem; // 20px
   --pad-md: 2.5rem; // 40px
@@ -15,6 +9,12 @@
   // Define max width for full-width content
   --full-width: 1440px;
 }
+
+// Define breakpoints for responsive design
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
 
 // Grid Layout System
 .grid-container {
@@ -27,6 +27,7 @@
     [main-end]
     minmax(0, 1fr)
     [full-end];
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   justify-items: center;
