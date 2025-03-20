@@ -7,8 +7,8 @@ import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <footer className="footer background--black main-width">
-      <div className="container">
+    <footer className="footer background--black grid-container">
+      <div className="container main-width">
         <div className="col">
           <div className="logoSection">
             <Logo />

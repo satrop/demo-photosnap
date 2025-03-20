@@ -2,14 +2,21 @@
   --anim: 0.3s ease;
 }
 
-a {
-  transition: all 0.3s ease-in-out;
-  outline-offset: 0px;
-  outline: 0px solid black;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-  &:focus {
-    outline-offset: 3px;
-    outline: 3px solid black;
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    outline-offset: 0px;
+    outline: 0px solid black;
+
+    &:focus {
+      outline-offset: 3px;
+      outline: 3px solid black;
+    }
   }
 }
 
