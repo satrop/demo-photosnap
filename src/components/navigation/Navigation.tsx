@@ -30,8 +30,8 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="nav main-width">
-      <div className="navContainer">
+    <nav className="nav grid-container">
+      <div className="navContainer main-width">
         <Link
           href="/"
           className="logoLink"

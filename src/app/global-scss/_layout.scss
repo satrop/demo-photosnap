@@ -8,13 +8,13 @@
 
   // Define max width for full-width content
   --full-width: 1440px;
+
+  --height: 72px;
 }
 
-// Define breakpoints for responsive design
-$bp-sm: 480px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xl: 1280px;
+body {
+  padding-top: var(--height);
+}
 
 // Grid Layout System
 .grid-container {

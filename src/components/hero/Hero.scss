@@ -1,4 +1,4 @@
-@use "../../app/global-scss/layout";
+@use "../../app/global-scss/breakpoints" as bp;
 
 .hero {
   display: grid;
@@ -10,7 +10,7 @@
   grid-template-columns: 1fr;
 
   // Tablet and up - side by side layout
-  @media (min-width: layout.$bp-md) {
+  @media (min-width: bp.$bp-md) {
     grid-template-rows: 1fr;
 
     &.side-by-side {
@@ -30,7 +30,7 @@
     }
   }
 
-  @media (min-width: layout.$bp-lg) {
+  @media (min-width: bp.$bp-lg) {
     &.side-by-side {
       grid-template-columns: 1fr minmax(0, 610px);
 

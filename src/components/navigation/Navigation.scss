@@ -1,12 +1,23 @@
-@use "../../app/global-scss/layout";
+@use "../../app/global-scss/breakpoints" as bp;
+
+// * Padding and margin added for better accessibility
+%touchArea {
+  padding: 1rem;
+  margin: -1rem;
+}
 
 .nav {
-  padding: 1rem 0;
-  position: relative;
+  height: var(--height);
+  top: 0;
+  left: 0;
+  right: 0;
   background: white;
+  position: fixed;
+  z-index: 10;
 }
 
 .navContainer {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,78 +25,120 @@
 }
 
 .logoLink {
-  padding: 1rem;
-  margin: -1rem;
+  @extend %touchArea;
+  line-height: 0;
+  position: relative;
+
+  svg {
+    position: relative;
+    z-index: 5;
+  }
+
+  // * Hide the menu on slide out
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: var(--height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 4;
+
+    @media (min-width: bp.$bp-md) {
+      display: none;
+    }
+  }
 }
 
 .hamburger {
-  display: none;
+  @extend %touchArea;
   background: none;
   border: none;
-  padding: 1rem;
-  margin: -1rem;
   cursor: pointer;
+  display: grid;
+  gap: 4px;
+  position: relative;
+  z-index: 5;
 
-  @media (max-width: layout.$bp-md - 1) {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: black;
+    transition: transform var(--anim);
+  }
 
+  &.open {
     span {
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: black;
-      transition: transform 0.3s ease;
-    }
-
-    &.open {
-      span {
-        &:first-child {
-          transform: rotate(45deg) translate(3px, 3px);
-        }
-        &:last-child {
-          transform: rotate(-45deg) translate(3px, -3px);
-        }
+      &:first-child {
+        transform: rotate(45deg) translate(4px) translate(-2px, 2px);
+      }
+      &:last-child {
+        transform: rotate(-45deg) translate(4px) translate(-2px, -2px);
       }
     }
+  }
+
+  @media (min-width: bp.$bp-md) {
+    display: none;
   }
 }
 
 .menuContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
+  transition: transform var(--anim);
+  top: var(--height);
+  left: calc(0% - var(--pad-sm));
+  width: calc(100% + var(--pad-sm) * 2);
+  background-color: white;
+  transform: translateY(calc(-100% - var(--height)));
+  padding: 0 var(--pad-sm) 2rem;
+  position: absolute;
+  z-index: 3;
 
-  @media (max-width: layout.$bp-md - 1) {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: -1rem;
-    right: -1rem;
-    padding: 2rem;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    align-items: center;
+  &.open {
+    transform: translateY(0);
+  }
 
-    &.open {
-      display: flex;
+  .inviteButton {
+    font-size: var(--sm);
+    inline-size: clamp(0px, 100%, 310px);
+  }
+
+  @media (min-width: bp.$bp-md) {
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    position: static;
+    transform: translateY(0);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+      margin: 0 auto;
+    }
+
+    .inviteButton {
+      inline-size: auto;
     }
   }
 }
 
 .menu {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @media (max-width: layout.$bp-md - 1) {
-    flex-direction: column;
-    align-items: center;
-  }
+  inline-size: clamp(0px, 100%, 310px);
+  padding-bottom: 1.25rem;
+  border-bottom: solid 1px var(--gray);
 
   a {
     color: black;
@@ -99,10 +152,11 @@
       opacity: 0.3;
     }
   }
-}
 
-.inviteButton {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
+  @media (min-width: bp.$bp-md) {
+    flex-direction: row;
+    gap: 2rem;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
