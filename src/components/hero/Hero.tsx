@@ -11,18 +11,19 @@ interface HeroProps {
   eyebrow?: string;
   date?: string;
   author?: string;
-  buttonText: string;
-  buttonHref: string;
+  buttonText?: string;
+  buttonHref?: string;
   variant: "overlay" | "side-by-side";
   imagePosition?: "left" | "right";
   backgroundColor?: "black" | "white";
   standout?: boolean;
+  short?: boolean;
 }
 
-export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, author, buttonText, buttonHref, variant, imagePosition = "right", backgroundColor = "white", standout = false }: HeroProps) {
+export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, author, buttonText, buttonHref, variant, imagePosition = "right", backgroundColor = "white", standout = false, short = false }: HeroProps) {
   const content = (
     <>
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      {eyebrow && <p className="eyebrow h4">{eyebrow}</p>}
       <h1 className="title">{title}</h1>
       {(date || author) && (
         <p className="meta">
@@ -31,18 +32,20 @@ export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, a
         </p>
       )}
       <p className="excerpt">{excerpt}</p>
-      <Button
-        href={buttonHref}
-        variant="secondary"
-        aria-label={buttonText}
-      >
-        {buttonText}
-      </Button>
+      {buttonText && (
+        <Button
+          href={buttonHref}
+          variant="secondary"
+          aria-label={buttonText}
+        >
+          {buttonText}
+        </Button>
+      )}
     </>
   );
 
   return (
-    <section className={classNames("hero", variant, `image-${imagePosition}`, "full-width", backgroundColor === "black" ? "background--black" : "background--white")}>
+    <section className={classNames("hero", variant, `image-${imagePosition}`, "full-width", backgroundColor === "black" ? "background--black" : "background--white", short ? "short" : "")}>
       <div className="imageContainer">
         <Image
           src={image}
