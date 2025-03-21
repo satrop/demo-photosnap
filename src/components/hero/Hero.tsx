@@ -16,9 +16,31 @@ interface HeroProps {
   variant: "overlay" | "side-by-side";
   imagePosition?: "left" | "right";
   backgroundColor?: "black" | "white";
+  standout?: boolean;
 }
 
-export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, author, buttonText, buttonHref, variant, imagePosition = "left", backgroundColor = "white" }: HeroProps) {
+export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, author, buttonText, buttonHref, variant, imagePosition = "right", backgroundColor = "white", standout = false }: HeroProps) {
+  const content = (
+    <>
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      <h1 className="title">{title}</h1>
+      {(date || author) && (
+        <p className="meta">
+          {date && <span className="date">{date}</span>}
+          {author && <span className="author">by {author}</span>}
+        </p>
+      )}
+      <p className="excerpt">{excerpt}</p>
+      <Button
+        href={buttonHref}
+        variant="secondary"
+        aria-label={buttonText}
+      >
+        {buttonText}
+      </Button>
+    </>
+  );
+
   return (
     <section className={classNames("hero", variant, `image-${imagePosition}`, "full-width", backgroundColor === "black" ? "background--black" : "background--white")}>
       <div className="imageContainer">
@@ -32,24 +54,7 @@ export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, a
           quality={90}
         />
       </div>
-      <div className="content">
-        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h1 className="title">{title}</h1>
-        {(date || author) && (
-          <p className="meta">
-            {date && <span className="date">{date}</span>}
-            {author && <span className="author">by {author}</span>}
-          </p>
-        )}
-        <p className="excerpt">{excerpt}</p>
-        <Button
-          href={buttonHref}
-          variant="secondary"
-          aria-label={buttonText}
-        >
-          {buttonText}
-        </Button>
-      </div>
+      <div className="content">{standout ? <span className="standout-content">{content}</span> : content}</div>
     </section>
   );
 }

@@ -1,16 +1,4 @@
 :root {
   --gray: #dfdfdf;
-  --gradient-deg: 90deg;
-  --gradient: linear-gradient(var(--gradient-deg), #ffc593 0%, #bc7198 50%, #5a77ff 100%);
+  --gradient: #ffc593 0%, #bc7198 50%, #5a77ff 100%;
 }
-
-// Example usage of gradient
-// .horizontal-gradient {
-//   --gradient-deg: 90deg;
-//   background: var(--gradient);
-// }
-
-// .vertical-gradient {
-//   --gradient-deg: 180deg;
-//   background: var(--gradient);
-// }

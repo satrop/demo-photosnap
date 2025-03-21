@@ -12,8 +12,30 @@ export default function Home() {
         buttonText="Get an invite"
         buttonHref="/pricing"
         backgroundColor="black"
+        imagePosition="right"
+        standout={true}
       />
       <Hero
+        variant="side-by-side"
+        image="/home/desktop/beautiful-stories.jpg"
+        imageAlt="Create and share your photo stories."
+        title="Create and share your photo stories."
+        excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        buttonText="Get an invite"
+        buttonHref="/pricing"
+        backgroundColor="white"
+      />
+      <Hero
+        variant="side-by-side"
+        image="/home/desktop/designed-for-everyone.jpg"
+        imageAlt="Create and share your photo stories."
+        title="Create and share your photo stories."
+        excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        buttonText="Get an invite"
+        buttonHref="/pricing"
+        backgroundColor="white"
+      />
+      {/* <Hero
         variant="overlay"
         image="/home/desktop/create-and-share.jpg"
         imageAlt="Create and share your photo stories"
@@ -21,7 +43,7 @@ export default function Home() {
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
         buttonText="Get an invite"
         buttonHref="/pricing"
-      />
+      /> */}
     </>
   );
 }
