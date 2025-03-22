@@ -1,4 +1,36 @@
 import Hero from "@/components/hero/Hero";
+import StoryCard from "@/components/story-card/StoryCard";
+
+const stories = [
+  {
+    image: "/stories/desktop/mountains.jpg",
+    date: "April 16th 2023",
+    title: "The Mountains",
+    author: "John Appleseed",
+    href: "/stories/the-mountains",
+  },
+  {
+    image: "/stories/desktop/cityscapes.jpg",
+    date: "April 14th 2023",
+    title: "Sunset Cityscapes",
+    author: "Benjamin Cruz",
+    href: "/stories/sunset-cityscapes",
+  },
+  {
+    image: "/stories/desktop/18-days-voyage.jpg",
+    date: "April 11th 2023",
+    title: "18 Days Voyage",
+    author: "Alexei Borodin",
+    href: "/stories/18-days-voyage",
+  },
+  {
+    image: "/stories/desktop/architecturals.jpg",
+    date: "April 9th 2023",
+    title: "Architecturals",
+    author: "Samantha Brooks",
+    href: "/stories/architecturals",
+  },
+];
 
 export default function Home() {
   return (
@@ -9,7 +41,7 @@ export default function Home() {
         imageAlt="Create and share your photo stories."
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
-        buttonText="Get an invite"
+        buttonText="View the stories"
         buttonHref="/pricing"
         backgroundColor="black"
         imagePosition="right"
@@ -21,7 +53,7 @@ export default function Home() {
         imageAlt="Create and share your photo stories."
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
-        buttonText="Get an invite"
+        buttonText="View the stories"
         buttonHref="/pricing"
         backgroundColor="white"
       />
@@ -31,33 +63,20 @@ export default function Home() {
         imageAlt="Create and share your photo stories."
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
-        buttonText="Get an invite"
+        buttonText="View the stories"
         buttonHref="/pricing"
         backgroundColor="white"
       />
-      <Hero
-        variant="overlay"
-        image="/stories/desktop/moon-of-appalacia.jpg"
-        imageAlt="Create and share your photo stories"
-        eyebrow="Last month's featured story"
-        title="Hazy full moon of Appalachia"
-        date="March 2nd 2020"
-        author="by John Doe"
-        excerpt="The dissected plateau area, while not actually made up of geological mountains, is popularly called 'mountains,' especially in eastern Kentucky and West Virginia, and while the ridges are not high, the terrain is extremely rugged."
-        buttonText="Read the story"
-        buttonHref="/pricing"
-        backgroundColor="black"
-      />
-      <Hero
-        variant="side-by-side"
-        image="/features/desktop/hero.jpg"
-        imageAlt="Create and share your photo stories"
-        title="Features"
-        excerpt="We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories."
-        backgroundColor="black"
-        standout={true}
-        short={true}
-      />
+      <section className="stories-section full-width">
+        <div className="story-cards-grid">
+          {stories.map((story) => (
+            <StoryCard
+              key={story.href}
+              {...story}
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

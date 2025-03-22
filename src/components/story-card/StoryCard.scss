@@ -1,0 +1,105 @@
+@use "../../app/global-scss/breakpoints" as bp;
+
+.story-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: bp.$bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: bp.$bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.story-card {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  height: 375px;
+  overflow: hidden;
+
+  &::after {
+    --direction: 360deg;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(var(--direction), var(--gradient));
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all var(--anim);
+  }
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    object-fit: cover;
+    transition: all var(--anim);
+  }
+
+  &:hover {
+    .story-card__image {
+      transform: scale(1.02);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  &__date {
+    font-size: var(--sm);
+    margin-bottom: 0.25rem;
+    opacity: 0.75;
+  }
+
+  &__title {
+    font-size: var(--lg);
+    margin-bottom: 0.25rem;
+  }
+
+  &__author {
+    font-size: var(--sm);
+    opacity: 0.75;
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 1rem;
+  }
+
+  &__cta {
+    .button {
+      pointer-events: none;
+      color: white;
+      padding: 0;
+      width: 100%;
+      justify-content: space-between;
+
+      span {
+        --color: white;
+      }
+    }
+  }
+}
