@@ -1,5 +1,6 @@
 import Hero from "@/components/hero/Hero";
 import StoryCard from "@/components/story-card/StoryCard";
+import FeatureCard from "@/components/feature-card/FeatureCard";
 
 const stories = [
   {
@@ -29,6 +30,30 @@ const stories = [
     title: "Architecturals",
     author: "Samantha Brooks",
     href: "/stories/architecturals",
+  },
+];
+
+const threeFeatures = [
+  {
+    icon: "/features/desktop/responsive.svg",
+    title: "100% Responsive",
+    description: "No matter which device you're on, our site is fully responsive and stories look beautiful on any screen.",
+    width: 72,
+    height: 72,
+  },
+  {
+    icon: "/features/desktop/no-limit.svg",
+    title: "No Photo Upload Limit",
+    description: "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
+    width: 72,
+    height: 36,
+  },
+  {
+    icon: "/features/desktop/embed.svg",
+    title: "Available to Embed",
+    description: "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.",
+    width: 71,
+    height: 72,
   },
 ];
 
@@ -73,6 +98,20 @@ export default function Home() {
             <StoryCard
               key={story.href}
               {...story}
+            />
+          ))}
+        </div>
+      </section>
+      <section className="features-section">
+        <div className="feature-cards-container">
+          {threeFeatures.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              width={feature.width}
+              height={feature.height}
             />
           ))}
         </div>
