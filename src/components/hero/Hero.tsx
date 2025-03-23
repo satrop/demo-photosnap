@@ -7,7 +7,7 @@ interface HeroProps {
   image: string;
   imageAlt: string;
   title: string;
-  excerpt: string;
+  excerpt?: string;
   eyebrow?: string;
   date?: string;
   author?: string;
@@ -31,7 +31,7 @@ export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, a
           {author && <span className="author">by {author}</span>}
         </p>
       )}
-      <p className="excerpt">{excerpt}</p>
+      {excerpt && <p className="excerpt">{excerpt}</p>}
       {buttonText && (
         <Button
           href={buttonHref}

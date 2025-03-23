@@ -1,0 +1,7 @@
+.stories-section:not([data-featured]) {
+  .story-card {
+    .story-card__date {
+      display: none;
+    }
+  }
+}

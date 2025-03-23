@@ -1,6 +1,7 @@
 import Hero from "@/components/hero/Hero";
 import StoryCard from "@/components/story-card/StoryCard";
 import FeatureCard from "@/components/feature-card/FeatureCard";
+import "./home.scss";
 
 const stories = [
   {
