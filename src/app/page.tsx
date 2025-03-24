@@ -71,7 +71,7 @@ export default function Home() {
         buttonHref="/pricing"
         backgroundColor="black"
         imagePosition="right"
-        standout={true}
+        standout
       />
       <Hero
         variant="side-by-side"

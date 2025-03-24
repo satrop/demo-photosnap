@@ -13,6 +13,7 @@ export default function Features() {
         variant="side-by-side"
         backgroundColor="black"
         standout
+        short
       />
 
       <section className="features-section">

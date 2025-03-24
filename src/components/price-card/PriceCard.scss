@@ -1,0 +1,61 @@
+@use "../../app/global-scss/breakpoints" as bp;
+
+.price-card {
+  position: relative;
+  background-color: var(--gray);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &--popular {
+    background-color: black;
+    color: white;
+
+    &::before {
+      --direction: 360deg;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(var(--direction), var(--gradient));
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-size: var(--xl);
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: var(--sm);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+  }
+
+  &__price-container {
+    margin-bottom: 2rem;
+  }
+
+  &__price {
+    font-size: var(--3xl);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__period {
+    font-size: var(--sm);
+    opacity: 0.6;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

@@ -100,7 +100,9 @@
 
   &.short {
     min-height: unset;
-    max-height: 490px;
+    @media (min-width: bp.$bp-md) {
+      max-height: 490px;
+    }
   }
 }
 
