@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2.625rem;
   gap: 2rem;
 
   &__label {
+    transition: opacity var(--anim);
     font-size: var(--lg);
+    font-weight: var(--bold);
     opacity: 0.5;
-    transition: opacity 0.3s ease;
 
     &--active {
       opacity: 1;
@@ -23,11 +25,15 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--anim);
 
-    // &:hover {
-    //   background-color: black;
-    // }
+    &:hover {
+      background-color: black;
+
+      .price-toggle__handle {
+        background-color: white;
+      }
+    }
   }
 
   &__handle {
@@ -38,14 +44,10 @@
     height: 1.5rem;
     background-color: black;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: transform var(--anim), color var(--anim);
   }
 
   &__switch--yearly &__handle {
     transform: translateX(2rem);
   }
-
-  // &__switch--yearly {
-  //   background-color: black;
-  // }
 }

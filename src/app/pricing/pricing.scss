@@ -1,6 +1,11 @@
 @use "../global-scss/breakpoints" as bp;
 
 .pricing-section {
+  padding-block: var(--pad-lg);
+
+  @media (min-width: bp.$bp-md) {
+    --difference: 1.875rem;
+  }
 }
 
 .pricing-cards {
