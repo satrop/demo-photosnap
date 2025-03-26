@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./FeatureTable.scss";
 
 interface FeatureTableProps {
@@ -28,7 +29,7 @@ export default function FeatureTable({ features, plans }: FeatureTableProps) {
                 <td key={`${plan.name}-${feature.title}`}>
                   <div>{plan.name}</div>
                   {plan.features[index] && (
-                    <img
+                    <Image
                       src="/pricing/desktop/check.svg"
                       alt="Feature included"
                       width={16}
