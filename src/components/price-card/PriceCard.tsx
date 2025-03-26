@@ -17,7 +17,7 @@ export default function PriceCard({ title, description, price, isYearly, popular
   return (
     <div className={`price-card${popular ? " price-card--popular" : ""}`}>
       <div className="price-card__content">
-        <h3 className="price-card__title">{title}</h3>
+        <h2 className="price-card__title">{title}</h2>
         <p className="price-card__description">{description}</p>
         <div className="price-card__price-container">
           <p className="price-card__price">${currentPrice.toFixed(2)}</p>
