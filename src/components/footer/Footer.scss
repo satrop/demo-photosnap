@@ -83,6 +83,16 @@
       }
     }
   }
+
+  .inviteButton {
+    font-size: var(--sm);
+    transition: outline var(--anim);
+
+    &:focus {
+      outline-offset: 3px;
+      outline: 3px solid white;
+    }
+  }
 }
 
 .logoSection {
@@ -107,6 +117,12 @@
   a {
     color: white;
     font-size: 1.25rem;
+    transition: color var(--anim), outline var(--anim);
+
+    &:focus {
+      outline-offset: 3px;
+      outline: 3px solid white;
+    }
 
     &:hover {
       color: #dfdfdf;
@@ -132,9 +148,15 @@
       text-transform: uppercase;
       font-size: var(--sm);
       letter-spacing: var(--ls-sm);
+      transition: outline var(--anim);
 
       &:hover {
         color: var(--gray);
+      }
+
+      &:focus {
+        outline-offset: 3px;
+        outline: 3px solid white;
       }
     }
   }
@@ -164,8 +186,4 @@
   p {
     opacity: 0.5;
   }
-}
-
-.inviteButton {
-  font-size: var(--sm);
 }
