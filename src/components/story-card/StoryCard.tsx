@@ -14,6 +14,7 @@ interface StoryCardProps {
 export default function StoryCard({ image, date, title, author, href }: StoryCardProps) {
   return (
     <Link
+      key={title}
       href={href}
       className="story-card"
     >

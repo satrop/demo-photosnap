@@ -9,28 +9,28 @@ const stories = [
     date: "April 16th 2023",
     title: "The Mountains",
     author: "John Appleseed",
-    href: "/stories/the-mountains",
+    href: "/stories/",
   },
   {
     image: "/stories/desktop/cityscapes.jpg",
     date: "April 14th 2023",
     title: "Sunset Cityscapes",
     author: "Benjamin Cruz",
-    href: "/stories/sunset-cityscapes",
+    href: "/stories/",
   },
   {
     image: "/stories/desktop/18-days-voyage.jpg",
     date: "April 11th 2023",
     title: "18 Days Voyage",
     author: "Alexei Borodin",
-    href: "/stories/18-days-voyage",
+    href: "/stories/",
   },
   {
     image: "/stories/desktop/architecturals.jpg",
     date: "April 9th 2023",
     title: "Architecturals",
     author: "Samantha Brooks",
-    href: "/stories/architecturals",
+    href: "/stories/",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Home() {
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
         buttonText="View the stories"
-        buttonHref="/pricing"
+        buttonHref="/stories/"
         backgroundColor="black"
         imagePosition="right"
         standout
@@ -80,7 +80,7 @@ export default function Home() {
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
         buttonText="View the stories"
-        buttonHref="/pricing"
+        buttonHref="/stories/"
         backgroundColor="white"
       />
       <Hero
@@ -90,14 +90,14 @@ export default function Home() {
         title="Create and share your photo stories."
         excerpt="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
         buttonText="View the stories"
-        buttonHref="/pricing"
+        buttonHref="/stories/"
         backgroundColor="white"
       />
       <section className="stories-section full-width">
         <div className="story-cards-grid">
           {stories.map((story) => (
             <StoryCard
-              key={story.href}
+              key={story.title}
               {...story}
             />
           ))}
