@@ -28,6 +28,12 @@
   @extend %touchArea;
   line-height: 0;
   position: relative;
+  transition: outline var(--anim);
+
+  &:focus {
+    outline-offset: 3px;
+    outline: 3px solid black;
+  }
 
   svg {
     position: relative;
@@ -119,6 +125,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: transparent;
 
     .menu {
       margin: 0 auto;
