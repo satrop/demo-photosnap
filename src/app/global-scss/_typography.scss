@@ -11,6 +11,7 @@
   --lg: #{functions.rem(18px)}; // H3
   --sm: #{functions.rem(12px)}; // H4
   --md: #{functions.rem(15px)}; // Body
+  --xs: #{functions.rem(10px)}; // Caption
 
   // Weights
   --bold: 700;
@@ -83,4 +84,10 @@ h4,
 
 .background--black {
   color: white;
+}
+
+.section-title {
+  padding-block: var(--pad-lg);
+  padding-bottom: 0;
+  text-align: center;
 }

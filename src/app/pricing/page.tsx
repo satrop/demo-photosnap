@@ -3,6 +3,7 @@ import { useState } from "react";
 import Hero from "@/components/hero/Hero";
 import PriceCard from "@/components/price-card/PriceCard";
 import PriceToggle from "@/components/price-toggle/PriceToggle";
+import FeatureTable from "@/components/feature-table/FeatureTable";
 import "./pricing.scss";
 
 export default function Pricing() {
@@ -26,6 +27,23 @@ export default function Pricing() {
       description: "Additional features available such as more detailed metrics. Recommended for business owners.",
       price: 99,
       popular: false,
+    },
+  ];
+
+  const features = [{ title: "UNLIMITED STORY POSTING" }, { title: "UNLIMITED PHOTO UPLOAD" }, { title: "EMBEDDING CUSTOM CONTENT" }, { title: "CUSTOMIZE METADATA" }, { title: "ADVANCED METRICS" }, { title: "PHOTO DOWNLOADS" }, { title: "SEARCH ENGINE INDEXING" }, { title: "CUSTOM ANALYTICS" }];
+
+  const featurePlans = [
+    {
+      name: "Basic",
+      features: [true, true, false, false, false, false, false, false],
+    },
+    {
+      name: "Pro",
+      features: [true, true, true, true, true, false, false, false],
+    },
+    {
+      name: "Business",
+      features: [true, true, true, true, true, true, true, true],
     },
   ];
 
@@ -60,6 +78,13 @@ export default function Pricing() {
             />
           ))}
         </div>
+
+        <h2 className="section-title h1">Compare</h2>
+
+        <FeatureTable
+          features={features}
+          plans={featurePlans}
+        />
       </section>
     </>
   );

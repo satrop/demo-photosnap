@@ -1,0 +1,113 @@
+@use "../../app/global-scss/breakpoints" as bp;
+
+.feature-table {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    tr {
+      @media (max-width: bp.$bp-sm) {
+        th:not(:first-child) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      @media (max-width: bp.$bp-sm) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        td {
+          padding: 0 0 1rem;
+
+          &:first-child {
+            grid-column: 1 / -1;
+            border-bottom: none;
+            padding: 1rem 0;
+          }
+
+          > div {
+            opacity: 0.5;
+            font-size: var(--xs);
+            font-weight: var(--bold);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+          }
+        }
+      }
+
+      @media (min-width: bp.$bp-sm) {
+        td {
+          > div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray);
+
+    @media (min-width: bp.$bp-sm) {
+      &:not(:first-child) {
+        width: calc(40% / 3);
+        text-align: center;
+
+        img {
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+
+  th {
+    border-color: black;
+  }
+
+  th {
+    font-weight: bold;
+    font-size: var(--sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  td {
+    font-size: var(--sm);
+
+    &:first-child {
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-sm);
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  @media (max-width: bp.$bp-sm) {
+    margin: 1rem 0;
+
+    th,
+    td {
+      padding: 1rem 0.5rem;
+    }
+  }
+}
