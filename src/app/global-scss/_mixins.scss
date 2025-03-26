@@ -1,0 +1,9 @@
+@mixin focus {
+  outline-offset: 3px;
+  outline: 3px solid black;
+}
+
+@mixin focus-white {
+  outline-offset: 3px;
+  outline: 3px solid white;
+}

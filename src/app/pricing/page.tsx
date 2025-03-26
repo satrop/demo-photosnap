@@ -5,6 +5,7 @@ import PriceCard from "@/components/price-card/PriceCard";
 import PriceToggle from "@/components/price-toggle/PriceToggle";
 import FeatureTable from "@/components/feature-table/FeatureTable";
 import "./pricing.scss";
+import BetaSection from "@/components/beta-section/BetaSection";
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
@@ -86,6 +87,7 @@ export default function Pricing() {
           plans={featurePlans}
         />
       </section>
+      <BetaSection />
     </>
   );
 }
