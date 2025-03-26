@@ -25,7 +25,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: background-color var(--anim);
+    transition: background-color var(--anim), outline var(--anim);
 
     &:hover {
       background-color: black;
@@ -33,6 +33,11 @@
       .price-toggle__handle {
         background-color: white;
       }
+    }
+
+    &:focus {
+      outline-offset: 3px;
+      outline: 3px solid black;
     }
   }
 
