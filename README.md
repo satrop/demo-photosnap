@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [Frontend Mentor - Photosnap](https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW)
+
+## Overview
+
+- [Live Site](https://demo-photosnap.vercel.app/)
+
+## Features
+
+- Responsive multi-page website
+- Interactive photo stories gallery
+- Dynamic pricing plans
+- Feature comparison table
+- Modern, clean UI design
+- Optimized images for different screen sizes
+- Smooth animations and transitions
+
+## My process
+
+### Built with ❤️
+
+- Next.js
+- TypeScript
+- Mobile-first workflow
+- SCSS for styling
+- Vercel for deployment
+- Jest for testing
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/demo-photosnap.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the project in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── src/
+│   ├── app/          # Next.js app router pages
+│   ├── components/   # Reusable UI components
+│   └── data/        # Static data and content
+├── public/          # Static assets and images
+└── tests/          # Test files
+```
 
-## Learn More
+## Running Tests
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📝 Brief
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Your challenge is to build out this multi-page website and get it looking as close to the design as possible.
+
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+
+Your users should be able to:
+
+- View the optimal layout for each page depending on their device's screen size ✅
+- See hover states for all interactive elements throughout the site ✅
+
+## License
+
+This project is part of a [Frontend Mentor](https://www.frontendmentor.io) challenge.
