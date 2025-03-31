@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://photosnap-website.vercel.app"),
   title: "Photosnap Website challenge on Frontend Mentor",
   description: "Frontend Mentor challenges help you improve your coding skills by building realistic projects. Join 1,000,000+ developers building projects, reviewing code, and helping each other get better.",
   openGraph: {

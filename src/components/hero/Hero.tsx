@@ -35,14 +35,7 @@ export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, a
       <h1 className="title">{title}</h1>
       {(date || author) && (
         <div className="meta">
-          {date && (
-            <time
-              className="date"
-              dateTime={new Date(date).toISOString()}
-            >
-              {date}
-            </time>
-          )}
+          {date && <time className="date">{date}</time>}
           {author && (
             <span className="author">
               <span className="visually-hidden">Article written </span>
