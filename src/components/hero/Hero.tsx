@@ -44,14 +44,7 @@ export default function Hero({ image, imageAlt, title, excerpt, eyebrow, date, a
           )}
         </div>
       )}
-      {excerpt && (
-        <p
-          className="excerpt"
-          style={{ color: "var(--text-muted)" }}
-        >
-          {excerpt}
-        </p>
-      )}
+      {excerpt && <p className="excerpt">{excerpt}</p>}
       {buttonText && (
         <Button
           href={buttonHref}

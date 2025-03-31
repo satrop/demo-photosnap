@@ -1,6 +1,7 @@
 import Hero from "@/components/hero/Hero";
 import StoryCard from "@/components/story-card/StoryCard";
 import { stories, featuredStory } from "@/data/stories";
+import "./stories.scss";
 
 export default function Stories() {
   return (
