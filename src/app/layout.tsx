@@ -15,24 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://photosnap-website.vercel.app"),
+  metadataBase: new URL("https://demo-photosnap.vercel.app/"),
   title: "Photosnap Website challenge on Frontend Mentor",
   description: "Frontend Mentor challenges help you improve your coding skills by building realistic projects. Join 1,000,000+ developers building projects, reviewing code, and helping each other get better.",
   openGraph: {
     title: "Photosnap Website challenge on Frontend Mentor",
     description: "Frontend Mentor challenges help you improve your coding skills by building realistic projects. Join 1,000,000+ developers building projects, reviewing code, and helping each other get better.",
-    url: "https://photosnap-website.vercel.app/",
+    url: "https://demo-photosnap.vercel.app/",
     siteName: "Photosnap",
+    locale: "en-US",
+    type: "website",
     images: [
       {
-        url: "images/og-image.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Photosnap Website",
       },
     ],
-    locale: "en-US",
-    type: "website",
   },
 };
 
