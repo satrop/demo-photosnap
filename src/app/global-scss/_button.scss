@@ -48,10 +48,6 @@
     &:focus {
       outline-offset: 3px;
       outline: 3px solid black;
-
-      .price-card--popular & {
-        outline: 3px solid white;
-      }
     }
   }
 

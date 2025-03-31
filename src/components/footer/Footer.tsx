@@ -6,27 +6,41 @@ import { FaFacebook, FaYoutube, FaTwitter, FaPinterest, FaInstagram } from "reac
 import "./Footer.scss";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="footer background--black grid-container">
+    <footer
+      className="footer background--black grid-container"
+      role="contentinfo"
+    >
       <div className="container main-width">
         <div className="col">
           <div className="logoSection">
-            <Logo />
+            <Link
+              href="/"
+              aria-label="Photosnap home"
+            >
+              <Logo />
+            </Link>
           </div>
 
           <nav
             className="socialLinks"
             aria-label="Social media links"
           >
-            <ul>
+            <h2 className="visually-hidden">Social Media Links</h2>
+            <ul role="list">
               <li>
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit our Facebook page"
+                  aria-label="Visit our Facebook page (opens in new window)"
                 >
-                  <FaFacebook />
+                  <FaFacebook
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                 </a>
               </li>
               <li>
@@ -34,9 +48,12 @@ export default function Footer() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit our YouTube channel"
+                  aria-label="Visit our YouTube channel (opens in new window)"
                 >
-                  <FaYoutube />
+                  <FaYoutube
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                 </a>
               </li>
               <li>
@@ -44,9 +61,12 @@ export default function Footer() {
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit our Twitter page"
+                  aria-label="Visit our Twitter page (opens in new window)"
                 >
-                  <FaTwitter />
+                  <FaTwitter
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                 </a>
               </li>
               <li>
@@ -54,9 +74,12 @@ export default function Footer() {
                   href="https://pinterest.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit our Pinterest page"
+                  aria-label="Visit our Pinterest page (opens in new window)"
                 >
-                  <FaPinterest />
+                  <FaPinterest
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                 </a>
               </li>
               <li>
@@ -64,9 +87,12 @@ export default function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit our Instagram page"
+                  aria-label="Visit our Instagram page (opens in new window)"
                 >
-                  <FaInstagram />
+                  <FaInstagram
+                    aria-hidden="true"
+                    focusable="false"
+                  />
                 </a>
               </li>
             </ul>
@@ -74,9 +100,10 @@ export default function Footer() {
 
           <nav
             className="pageLinks"
-            aria-label="Footer navigation"
+            aria-label="Site pages"
           >
-            <ul>
+            <h2 className="visually-hidden">Site Navigation</h2>
+            <ul role="list">
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -97,14 +124,13 @@ export default function Footer() {
           <Button
             className="inviteButton"
             variant="secondary"
-            aria-label="Get an invite"
-            title="Get an invite"
+            aria-label="Get an invite to join Photosnap"
           >
             Get an invite
           </Button>
 
           <div className="copyright">
-            <p>Copyright 2019. All Rights Reserved</p>
+            <p>Copyright {currentYear}. All Rights Reserved</p>
           </div>
         </div>
       </div>

@@ -46,8 +46,20 @@ export default function RootLayout({
       className={`${dmSans.variable} ${geistMono.variable}`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="skip-link"
+        >
+          Skip to main content
+        </a>
         <Navigation />
-        <main className="grid-container">{children}</main>
+        <main
+          id="main-content"
+          className="grid-container"
+          tabIndex={-1}
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

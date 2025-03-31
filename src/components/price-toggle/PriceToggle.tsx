@@ -7,18 +7,36 @@ interface PriceToggleProps {
 
 export default function PriceToggle({ isYearly, onChange }: PriceToggleProps) {
   return (
-    <div className="price-toggle">
-      <span className={`price-toggle__label${!isYearly ? " price-toggle__label--active" : ""}`}>Monthly</span>
+    <div
+      className="price-toggle"
+      role="group"
+      aria-label="Billing frequency"
+    >
+      <span
+        className={`price-toggle__label${!isYearly ? " price-toggle__label--active" : ""}`}
+        aria-hidden={isYearly}
+      >
+        Monthly
+      </span>
       <button
         className={`price-toggle__switch${isYearly ? " price-toggle__switch--yearly" : ""}`}
         onClick={() => onChange(!isYearly)}
-        aria-label={`Switch to ${isYearly ? "monthly" : "yearly"} pricing`}
+        aria-label="Toggle billing frequency"
         role="switch"
         aria-checked={isYearly}
       >
-        <span className="price-toggle__handle" />
+        <span className="visually-hidden">{isYearly ? "Switch to monthly billing" : "Switch to yearly billing"}</span>
+        <span
+          className="price-toggle__handle"
+          aria-hidden="true"
+        />
       </button>
-      <span className={`price-toggle__label${isYearly ? " price-toggle__label--active" : ""}`}>Yearly</span>
+      <span
+        className={`price-toggle__label${isYearly ? " price-toggle__label--active" : ""}`}
+        aria-hidden={!isYearly}
+      >
+        Yearly
+      </span>
     </div>
   );
 }

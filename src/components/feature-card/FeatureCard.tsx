@@ -11,8 +11,11 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ icon, title, description, width = 72, height = 72 }: FeatureCardProps) {
   return (
-    <div className="feature-card">
-      <div className="feature-card__icon">
+    <article className="feature-card">
+      <div
+        className="feature-card__icon"
+        aria-hidden="true"
+      >
         <Image
           src={icon}
           alt=""
@@ -22,7 +25,12 @@ export default function FeatureCard({ icon, title, description, width = 72, heig
         />
       </div>
       <h3 className="feature-card__title">{title}</h3>
-      <p className="feature-card__description">{description}</p>
-    </div>
+      <p
+        className="feature-card__description"
+        style={{ color: "var(--text-muted)" }}
+      >
+        {description}
+      </p>
+    </article>
   );
 }

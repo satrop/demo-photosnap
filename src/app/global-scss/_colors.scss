@@ -1,5 +1,10 @@
 :root {
   --gray-50: #f5f5f5;
   --gray: #dfdfdf;
+  --gray-text: #757575; // More accessible than opacity
   --gradient: #5a77ff 0%, #bc7198 50%, #ffc593 100%;
+
+  // High contrast alternatives for text
+  --text-muted: #666666; // Instead of opacity 0.6
+  --text-subtle: #757575; // Instead of opacity 0.75
 }
